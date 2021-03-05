@@ -15,16 +15,11 @@ public class Customer extends User{
 	}
 	
 	public Customer(String firstName, String lastName, String email, String password) {
-		this.setFirstName(firstName);
-		this.setLastName(lastName);
-		this.setEmail(email);
-		this.setPassword(password);
+		super(firstName, lastName, email, password);
 		selling = new Inventory();
 		balance = 0;
 		cart = new ShoppingCart(); 
 	}
-
-	
 
 	public Inventory getSelling() {
 		return selling;
@@ -46,13 +41,9 @@ public class Customer extends User{
 		this.balance = balance;
 	}
 	
-
 	public int getBalance() {
 		return balance;
 	}
-
-
-
 
 //	public static void main(String[] args) {
 //		Customer test = new Customer();

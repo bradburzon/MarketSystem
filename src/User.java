@@ -8,6 +8,7 @@ public class User {
 	private int userID; //need to make it that userID keeps being added to when making new User
 	static int numberOfUsers = 0;
 	private boolean loggedIn;
+	private int privelage;
 
 
 	public User () {
@@ -16,6 +17,7 @@ public class User {
 		this.email = "JohnDoe2020@email.com";
 		this.password = "password";
 		this.loggedIn = false;
+		this.privelage = 0;
 		userID = numberOfUsers;
 		User.numberOfUsers++;
 	}
@@ -26,6 +28,7 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.loggedIn = false;
+		privelage = 0;
 		userID = numberOfUsers;
 		User.numberOfUsers++;
 	}
@@ -35,6 +38,10 @@ public class User {
 				email + "\n" +
 				userID + "\n" +
 				loggedIn;
+	}
+
+	public String getFirstName() {
+		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
@@ -73,16 +80,20 @@ public class User {
 		this.userID = userID;
 	}
 
+	public int getPrivelage() {
+		return privelage;
+	}
+
+	public void setPrivelage(int privelage) {
+		this.privelage = privelage;
+	}
+
 	public boolean isLoggedIn() {
 		return loggedIn;
 	}
 
 	public void setLoggedIn(boolean loggedIn) {
 		this.loggedIn = loggedIn;
-	}
-
-	public String getFirstName() {
-		return firstName;
 	}
 
 	public boolean logIn(String password) {
