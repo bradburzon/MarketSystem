@@ -1,37 +1,37 @@
 
 public class Customer extends User{
 
-	private Inventory selling;
+	private ItemContainer selling;
 	private int balance;
-	private ShoppingCart cart;
+	private ItemContainer cart;
 	// itemSold, orderHistory,
 
 	public Customer() {
-		selling = new Inventory();
+		selling = new ItemContainer();
 		balance = 0;
-		cart = new ShoppingCart(); 
+		cart = new ItemContainer(); 
 	}
 	
 	public Customer(String firstName, String lastName, String email, String password) {
 		super(firstName, lastName, email, password);
-		selling = new Inventory();
+		selling = new ItemContainer();
 		balance = 0;
-		cart = new ShoppingCart(); 
+		cart = new ItemContainer(); 
 	}
 
-	public Inventory getSelling() {
+	public ItemContainer getSelling() {
 		return selling;
 	}
 
-	public void setSelling(Inventory selling) {
+	public void setSelling(ItemContainer selling) {
 		this.selling = selling;
 	}
 
-	public ShoppingCart getCart() {
+	public ItemContainer  getCart() {
 		return cart;
 	}
 
-	public void setCart(ShoppingCart cart) {
+	public void setCart(ItemContainer cart) {
 		this.cart = cart;
 	}
 
