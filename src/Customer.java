@@ -43,17 +43,4 @@ public class Customer extends User{
 		return balance;
 	}
 
-//	public static void main(String[] args) {
-//		Customer test = new Customer();
-//		Customer test2 = new Customer();
-//		Customer test3 = new Customer();
-//		Customer test4 = new Customer();
-//		System.out.println(test.getUserID());
-//		System.out.println(test2.getUserID());
-//		System.out.println(test3.getUserID());
-//		System.out.println(test4.getUserID());
-//
-//		
-//	}
-
 }

@@ -10,7 +10,6 @@ public class User {
 	private boolean loggedIn;
 	private int privelage;
 
-
 	public User () {
 		this.firstName = "John";
 		this.lastName = "Doe";
@@ -108,15 +107,14 @@ public class User {
 
 	public void changePassword(String newPassword) {
 		this.password = newPassword;
-	};
+	}
 
-//	public static void main(String[] args) {
-//		User test = new User();
-//		System.out.println(test);
-//		test.logIn("password");
-//		System.out.println(test);
-//		test.logOut();
-//		System.out.println(test);
-//	}
+	public static int getNumberOfUsers() {
+		return numberOfUsers;
+	}
+
+	public static void setNumberOfUsers(int numberOfUsers) {
+		User.numberOfUsers = numberOfUsers;
+	};
 
 }

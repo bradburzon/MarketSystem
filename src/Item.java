@@ -25,7 +25,6 @@ public class Item {
 		numberOfItems++;
 	}
 
-	
 	public String getName() {
 		return name;
 	}
@@ -74,6 +73,4 @@ public class Item {
 		Item.numberOfItems = numberOfItems;
 	}
 
-	
-	
 }

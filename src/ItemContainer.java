@@ -6,7 +6,6 @@ public class ItemContainer {
 	private int totalPrice;
 	private int numberOfItems;
 	
-	
 	public ItemContainer() {
 		container = new HashSet<Item>();
 		totalPrice = 0;
@@ -42,6 +41,5 @@ public class ItemContainer {
 	public void setNumberOfItems(int numberOfItems) {
 		this.numberOfItems = numberOfItems;
 	}
-	
 	
 }
