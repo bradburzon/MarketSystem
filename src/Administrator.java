@@ -1,8 +1,9 @@
+import java.util.HashSet;
 
 public class Administrator extends User {
 
 	private int adminID;
-	int privelage;
+	private int privelage;
 
 	public Administrator(String firstName, String lastName, String email, String password) {
 		super(firstName, lastName, email, password);
@@ -10,18 +11,28 @@ public class Administrator extends User {
 		privelage = 2;
 	}
 
-	private Customer createCustomer(String firstName, String lastName, String email, String password) {
-		Customer temp = new Customer(firstName, lastName, email, password);
-		return temp;
+	public Administrator() {
+		super();
+		adminID = getUserID() + 1000;
+		privelage = 2;
+	}
+
+	public int getAdminID() {
+		return adminID;
+	}
+
+	public void setAdminID(int adminID) {
+		this.adminID = adminID;
+	}
+
+	public int getPrivelage() {
+		return privelage;
+	}
+
+	public void setPrivelage(int privelage) {
+		this.privelage = privelage;
 	}
 
 
-	private void changeUser() {	
-		//TODO
-	}
-
-	private void deleteUser() {
-		//TODO
-	}
 
 }
