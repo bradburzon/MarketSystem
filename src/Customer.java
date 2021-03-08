@@ -4,12 +4,14 @@ public class Customer extends User{
 	private ItemContainer selling;
 	private int balance;
 	private ItemContainer cart;
-	// itemSold, orderHistory,
+	private Order lastOrder;
+	// TODO itemSold, orderHistory,
 
 	public Customer() {
 		selling = new ItemContainer();
 		balance = 0;
-		cart = new ItemContainer(); 
+		cart = new ItemContainer();
+		lastOrder = null;
 	}
 	
 	public Customer(String firstName, String lastName, String email, String password) {
@@ -17,6 +19,7 @@ public class Customer extends User{
 		selling = new ItemContainer();
 		balance = 0;
 		cart = new ItemContainer(); 
+		lastOrder = null;
 	}
 
 	public ItemContainer getSelling() {
@@ -41,6 +44,14 @@ public class Customer extends User{
 	
 	public int getBalance() {
 		return balance;
+	}
+
+	public Order getLastOrder() {
+		return lastOrder;
+	}
+
+	public void setLastOrder(Order lastOrder) {
+		this.lastOrder = lastOrder;
 	}
 
 }
