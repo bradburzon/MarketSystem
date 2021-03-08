@@ -8,6 +8,7 @@ public class Customer extends User{
 	// TODO itemSold, orderHistory,
 
 	public Customer() {
+		super();
 		selling = new ItemContainer();
 		balance = 0;
 		cart = new ItemContainer();
