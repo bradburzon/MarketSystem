@@ -6,14 +6,15 @@ public class Item {
 	private int quantity;
 	private String description;
 	private int itemID;
+	private ItemStatus status;
 	static int numberOfItems = 0;
 	
 	public Item() {
 		price = 0;
 		quantity = 0;
 		description = "test";
-		itemID = numberOfItems;
-		numberOfItems++;
+		status = ItemStatus.NEW;
+		itemID = numberOfItems++;
 	}
 	
 	public Item(String name, int price, int quantity, String description) {
@@ -21,8 +22,8 @@ public class Item {
 		this.price = price;
 		this.quantity = quantity;
 		this.description = description;
-		itemID = numberOfItems;
-		numberOfItems++;
+		status = ItemStatus.NEW;
+		itemID = numberOfItems++;
 	}
 
 	public String getName() {
@@ -55,6 +56,14 @@ public class Item {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public ItemStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ItemStatus status) {
+		this.status = status;
 	}
 
 	public int getItemID() {

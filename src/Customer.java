@@ -1,17 +1,16 @@
 
 public class Customer extends User{
 
-	private ItemContainer selling;
+	private ItemContainer cart, selling, itemsSold;
 	private int balance;
-	private ItemContainer cart;
-	private Order lastOrder;
-	// TODO itemSold, orderHistory,
+	private Order lastOrder; // TODO replace with orderHistory,
 
 	public Customer() {
 		super();
 		selling = new ItemContainer();
 		balance = 0;
 		cart = new ItemContainer();
+		itemsSold = new ItemContainer();
 		lastOrder = null;
 	}
 	
@@ -20,6 +19,7 @@ public class Customer extends User{
 		selling = new ItemContainer();
 		balance = 0;
 		cart = new ItemContainer(); 
+		itemsSold = new ItemContainer();
 		lastOrder = null;
 	}
 
@@ -33,6 +33,14 @@ public class Customer extends User{
 
 	public ItemContainer  getCart() {
 		return cart;
+	}
+
+	public ItemContainer getItemsSold() {
+		return itemsSold;
+	}
+
+	public void setItemsSold(ItemContainer itemsSold) {
+		this.itemsSold = itemsSold;
 	}
 
 	public void setCart(ItemContainer cart) {
