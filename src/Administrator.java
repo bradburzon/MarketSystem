@@ -1,20 +1,19 @@
-import java.util.HashSet;
 
 public class Administrator extends User {
 
 	private int adminID;
-	private int privelage;
+	private Privelage privelage;
 
 	public Administrator(String firstName, String lastName, String email, String password) {
 		super(firstName, lastName, email, password);
 		adminID = getUserID() + 1000;
-		privelage = 2;
+		privelage = Privelage.ADMIN;;
 	}
 
 	public Administrator() {
 		super();
 		adminID = getUserID() + 1000;
-		privelage = 2;
+		privelage = Privelage.ADMIN;
 	}
 
 	public int getAdminID() {
@@ -25,14 +24,12 @@ public class Administrator extends User {
 		this.adminID = adminID;
 	}
 
-	public int getPrivelage() {
+	public Privelage getPrivelage() {
 		return privelage;
 	}
 
-	public void setPrivelage(int privelage) {
+	public void setPrivelage(Privelage privelage) {
 		this.privelage = privelage;
 	}
-
-
 
 }

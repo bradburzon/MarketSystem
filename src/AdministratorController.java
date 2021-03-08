@@ -15,20 +15,19 @@ public class AdministratorController {
 		this.currentAdmin = currentAdmin;
 	}
 
-	public void changeUserPrivelage(User user, int newPrivelage) {
-		if(newPrivelage >= 0 && newPrivelage < 3) {
-			if(user instanceof Customer) {
-				if(currentAdmin.getPrivelage() >= 2 && user.getPrivelage() <= 1 && user.getPrivelage() != newPrivelage) {
-					user.setPrivelage(newPrivelage);
-				}
-			} else if(user instanceof Administrator) {
-				if(currentAdmin.getPrivelage() > user.getPrivelage()) {
-					user.setPrivelage(newPrivelage);
-				}
+	public void changeUserPrivelage(User user, Privelage newPrivelage) {
+		if(user instanceof Customer) {
+			if(currentAdmin.getPrivelage() == Privelage.ADMIN && user.getPrivelage() != Privelage.ADMIN && user.getPrivelage() != newPrivelage ) {
+				user.setPrivelage(newPrivelage);
 			}
-		} else {
-			System.out.println("INVALID PRIVELAGE");
+		} else if(user instanceof Administrator) {
+			if(newPrivelage == Privelage.MEMBER) {
+				user.setPrivelage(newPrivelage);
+			} else {
+				System.out.println("INVALID PRIVELAGE");
+			}
 		}
+
 	}
 
 	//	public Customer createCustomer(String firstName, String lastName, String email, String password) {
@@ -37,14 +36,14 @@ public class AdministratorController {
 	//  }
 	//	public void deleteUser(User u) {
 	//	}
+	
 	public static void main(String[] args) {
 		Administrator admin = new Administrator();
 		AdministratorController ac = new AdministratorController(admin);
 		Customer testCustomer = new Customer();
-		
-		ac.changeUserPrivelage(testCustomer, 2);
+
+		ac.changeUserPrivelage(testCustomer, Privelage.MEMBER);
 		System.out.println(testCustomer.getPrivelage());
-		
 	}
 
 }

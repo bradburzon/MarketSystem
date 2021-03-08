@@ -4,7 +4,7 @@ public class Order {
 	private ItemContainer items;
 	private String dateOrdered;
 	private int totalPrice;
-	private int status;
+	private OrderStatus status;
 	private int orderID;
 	private static int numberOfOrders = 0;
 	
@@ -12,7 +12,7 @@ public class Order {
 		this.items = items;
 		this.dateOrdered = dateOrdered;
 		this.totalPrice = totalPrice;
-		status = 0;
+		status = OrderStatus.NEW;
 		orderID = numberOfOrders++;
 	}
 
@@ -40,11 +40,11 @@ public class Order {
 		this.totalPrice = totalPrice;
 	}
 
-	public int getStatus() {
+	public OrderStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
 
@@ -63,7 +63,5 @@ public class Order {
 	public static void setNumberOfOrders(int numberOfOrders) {
 		Order.numberOfOrders = numberOfOrders;
 	}
-	
-	
 	
 }
