@@ -1,4 +1,4 @@
-
+package Model;
 public class Customer extends User{
 
 	private ItemContainer cart, selling, itemsSold;
