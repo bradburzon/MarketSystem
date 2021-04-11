@@ -1,4 +1,4 @@
-
+package Model;
 public class Administrator extends User {
 
 	private int adminID;

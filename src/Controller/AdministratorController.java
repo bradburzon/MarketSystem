@@ -1,3 +1,8 @@
+package Controller;
+import Model.Administrator;
+import Model.Customer;
+import Model.Privelage;
+import Model.User;
 
 public class AdministratorController {
 

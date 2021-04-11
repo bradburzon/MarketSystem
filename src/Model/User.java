@@ -1,3 +1,7 @@
+package Model;
+
+//TODO 
+	//create a unique ID per user
 
 public class User {
 
@@ -5,7 +9,7 @@ public class User {
 	private String lastName;
 	private String email;
 	private String password;
-	private int userID; //need to make it that userID keeps being added to when making new User
+	private int userID; 
 	static int numberOfUsers = 0;
 	private boolean loggedIn;
 	private Privelage privelage;
@@ -31,13 +35,13 @@ public class User {
 		userID = numberOfUsers;
 		User.numberOfUsers++;
 	}
-
-	public String toString() {
-		return firstName + " " + lastName + "\n" +
-				email + "\n" +
-				userID + "\n" +
-				loggedIn;
-	}
+	//
+	//	public String toString() {
+	//		return firstName + " " + lastName + "\n" +
+	//				email + "\n" +
+	//				userID + "\n" +
+	//				loggedIn;
+	//	}
 
 	public String getFirstName() {
 		return firstName;
@@ -45,7 +49,7 @@ public class User {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-		
+
 	}
 	public String getLastName() {
 		return lastName;
@@ -97,7 +101,6 @@ public class User {
 
 	public boolean logIn(String password) {
 		loggedIn = this.password.equals(password);
-
 		return loggedIn;
 	};
 
@@ -110,11 +113,12 @@ public class User {
 	}
 
 	public static int getNumberOfUsers() {
-		return numberOfUsers;
+		return numberOfUsers - 1;
 	}
 
 	public static void setNumberOfUsers(int numberOfUsers) {
 		User.numberOfUsers = numberOfUsers;
 	};
+	
 
 }
